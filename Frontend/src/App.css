@@ -1,0 +1,277 @@
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #eef2f7, #f8fafc);
+  min-height: 100vh;
+}
+
+
+/* ================= NAVBAR (UPDATED COLORS) ================= */
+
+.nav {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  border-radius: 16px;
+  margin: 30px auto;
+  width: 90%;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.nav a:hover {
+  background: #334155;
+  color: #38bdf8;
+}
+
+.nav a.active {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #ffffff;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+.container {
+  width: 90%;
+  margin: 30px auto;
+}
+
+
+/* ================= TABLE SECTION ================= */
+
+.table-wrapper {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+
+th {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  padding: 18px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+th:first-child {
+  border-top-left-radius: 14px;
+}
+
+th:last-child {
+  border-top-right-radius: 14px;
+}
+
+td {
+  padding: 14px;
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+
+tbody tr:hover {
+  background: #f8fafc;
+  transition: 0.3s ease;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+td button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+td button:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+
+/* ================= FORM SECTION ================= */
+
+.form {
+  width: 420px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form h3 {
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Inputs & Select */
+
+.form input,
+.form select {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Radio Group */
+
+.form div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Add Button */
+
+.form button {
+  padding: 14px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.form button:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* ================= SEARCH SECTION ================= */
+
+.search-box {
+  width: 420px;
+  margin: 50px auto;
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.search-box input {
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.search-box button {
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.search-box button:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* Search Result Card */
+
+.search-box div {
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.search-box p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .nav {
+    flex-direction: column;
+    gap: 15px;
+    width: 95%;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .form,
+  .search-box {
+    width: 90%;
+  }
+
+  th, td {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
