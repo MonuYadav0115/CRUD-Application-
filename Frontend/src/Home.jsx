@@ -4,7 +4,8 @@ import axios from "axios";
 const Home = () => {
   const [data, setData] = useState([]);
 
-  // Fetch Data
+  // Fetching the Data
+  
   useEffect(() => {
     axios.get("http://localhost:5000/data")
       .then((res) => {
@@ -13,13 +14,13 @@ const Home = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  // Delete Function
+
   const handleDelete = (id) => {
     axios.delete(`http://localhost:5000/delete/${id}`)
       .then(() => {
         alert("Deleted Successfully");
 
-        // Update UI without reload
+        
         setData(data.filter((item) => item._id !== id));
       })
       .catch(() => {

@@ -23,7 +23,8 @@ const Add = () => {
 
   const handleSubmit = async () => {
 
-    // Basic Validation
+
+
     if (!data.name || !data.phoneNo || !data._id) {
       setMsg("Please fill all required fields");
       return;
@@ -35,6 +36,7 @@ const Add = () => {
       setMsg("Data Added Successfully");
 
       // Reset form
+
       setData({
         name: "",
         phoneNo: "",
@@ -44,7 +46,6 @@ const Add = () => {
         _id: ""
       });
 
-      // Redirect after short delay
       setTimeout(() => {
         navigate("/");
       }, 800);

@@ -61,6 +61,9 @@ app.get("/search/:id", async (req, res) => {
     }
 });
 
+
+// Delete the Data
+
 app.delete("/delete/:id", async (req, res) => {
   try {
     await um.findByIdAndDelete(req.params.id)
