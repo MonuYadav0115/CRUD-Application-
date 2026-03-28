@@ -31,7 +31,7 @@ const Add = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/add", data);
+      await axios.post("https://crud-application-rehq.onrender.com/add", data);
 
       setMsg("Data Added Successfully");
 

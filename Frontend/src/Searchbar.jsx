@@ -11,7 +11,7 @@ const Search = () => {
 
     if (!id) return alert("Enter email first")
 
-    axios.get(`http://localhost:5000/search/${id}`)
+    axios.get(`https://crud-application-rehq.onrender.com/search${id}`)
       .then((res) => {
         setObj(res.data)
         setError(false)

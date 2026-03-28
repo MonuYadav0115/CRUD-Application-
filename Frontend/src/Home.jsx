@@ -7,7 +7,7 @@ const Home = () => {
   // Fetching the Data
   
   useEffect(() => {
-    axios.get("http://localhost:5000/data")
+    axios.get("https://crud-application-rehq.onrender.com/data")
       .then((res) => {
         setData(res.data);
       })
@@ -16,7 +16,7 @@ const Home = () => {
 
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/delete/${id}`)
+    axios.delete(`https://crud-application-rehq.onrender.com/delete${id}`)
       .then(() => {
         alert("Deleted Successfully");
 
