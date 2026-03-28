@@ -1,8 +1,16 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 
-mongoose.connect("mongodb://localhost:27017/v25hfs2mern1db")
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(cors());
+
+// MongoDB Connection
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     console.log("Connection is Okey");
 })
@@ -10,6 +18,7 @@ mongoose.connect("mongodb://localhost:27017/v25hfs2mern1db")
     console.log("Error in DB Connection");
 });
 
+// Schema
 const usersch = new mongoose.Schema({
     _id: String,
     name: String,
@@ -21,15 +30,7 @@ const usersch = new mongoose.Schema({
 
 const um = mongoose.model("user", usersch);
 
-const app = express();
-
-app.use(express.json());
-app.use(cors());
-
-app.listen(5000, () => {
-    console.log("Server running on port 5000");
-});
-
+// Routes
 app.post("/add", async (req, res) => {
     try {
         const data = new um(req.body);
@@ -61,9 +62,7 @@ app.get("/search/:id", async (req, res) => {
     }
 });
 
-
-// Delete the Data
-
+// Delete
 app.delete("/delete/:id", async (req, res) => {
   try {
     await um.findByIdAndDelete(req.params.id)
@@ -71,4 +70,11 @@ app.delete("/delete/:id", async (req, res) => {
   } catch {
     res.json({ Message: "Error in Deleting Data" })
   }
-})
+});
+
+// 🔥 IMPORTANT: Use dynamic PORT
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
